@@ -1,4 +1,5 @@
 class Pin < ActiveRecord::Base
+  acts_as_votable
   belongs_to :user
 
   validates :title, :description, length: { in: 3..86 }
