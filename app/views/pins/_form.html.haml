@@ -1,5 +1,5 @@
-/ = simple_form_for @pin, html: { multipart: true } do |f|
-= simple_form_for(@pin, html: { multipart: true, class: 'form-horizontal' }) do |f|
+/ = simple_form_for(@pin, html: { multipart: true, class: 'form-horizontal' }) do |f|
+= simple_form_for @pin, html: { multipart: true } do |f|
   - if @pin.errors.any?
     #errors
       %h2 pluralize(@pin.errors.count, "error")
@@ -10,6 +10,5 @@
     = f.input :title, input_html: { class: 'form-control' }
   .form-group
     = f.input :description, input_html: { class: 'form-control' }
-  %br/
   = f.button :submit, class: 'btn btn-primary'
 

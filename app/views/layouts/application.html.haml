@@ -2,11 +2,32 @@
 %html{:lang => "en"}
 %head
   %meta{:charset => "UTF-8"}/
+  %meta{:name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no"}
   %title Pinteresting
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  - flash.each do |name, msg|
-    = content_tag :div, msg, class: 'alert alert-info'
-  = yield
+  %nav.navbar.navbar-default
+    .container
+      .navbar-header
+        %button.navbar-toggle.collapsed{ data: { toggle: 'collapse', target: '#navbar'}, aria: {expanded: 'false', controls: 'navbar'}}
+          %span.sr-only
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to "Pinteresting", root_path, class: 'navbar-brand'
+      #navbar.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          - if user_signed_in?
+            %li= link_to "new pin", new_pin_path
+            %li= link_to "sign out", destroy_user_session_path, method: :delete
+          - else
+            %li= link_to "sign in", new_user_session_path
+            %li= link_to "sign up", new_user_registration_path
+
+  .container
+    - flash.each do |name, msg|
+      = content_tag :div, msg, class: 'alert alert-info'
+
+    = yield
