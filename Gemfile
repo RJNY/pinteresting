@@ -10,6 +10,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'masonry-rails', '~> 0.2.4'
 gem 'paperclip', '~> 4.2.1'
 # $ rails g paperclip user image
 # class User < ActiveRecord::Base
