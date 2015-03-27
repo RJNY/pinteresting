@@ -2,7 +2,7 @@
   - @pins.each do |pin|
     .box.panel.panel-default
       = link_to (image_tag pin.image.url), pin
-      %h2= link_to pin.title, pin
+      %h2= link_to truncate(pin.title, length: 32), pin
       %p.user
         Submitted by
         = pin.user.email
