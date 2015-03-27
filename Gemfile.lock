@@ -41,6 +41,11 @@ GEM
     autoprefixer-rails (5.1.7.1)
       execjs
       json
+    aws-sdk (1.63.0)
+      aws-sdk-v1 (= 1.63.0)
+    aws-sdk-v1 (1.63.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -71,6 +76,11 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
+    dotenv-rails (0.11.1)
+      dotenv (= 0.11.1)
     erubis (2.7.0)
     execjs (2.4.0)
     globalid (0.3.3)
@@ -197,10 +207,12 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
+  aws-sdk (< 2.0)
   bootstrap-sass (~> 3.3.4.1)
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 3.4.1)
+  dotenv-rails
   haml (~> 4.0.6)
   jbuilder (~> 2.0)
   jquery-rails
