@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.1.3"
 
 gem 'rails', '4.2.0'
 gem 'pg'
@@ -18,6 +19,7 @@ gem 'devise', '~> 3.4.1'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'aws-sdk', '< 2.0'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'rspec'
