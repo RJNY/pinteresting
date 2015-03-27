@@ -16,3 +16,28 @@
 //= require turbolinks
 //= require masonry/jquery.masonry
 //= require_tree .
+
+window.file_upload_cache = window.file_upload_cache || {};
+window.file_upload_cache.initialize = function() {
+
+    $.each($('.cached_file'), function(index, element) {
+      var id = '#' + element.id,
+      $id = $(id),
+      $cache = $(id + "_cache"),
+      $replace = $(id + '_replace'),
+      $existing = $(id + "_existing");
+
+      if($cache.val()){
+        $(id).hide();
+      }
+      $($replace).click(function() {
+        $($id).show();
+        $($existing).hide();
+        $($cache).val(null);
+      });
+    });
+  }
+
+  $(function() {
+    window.file_upload_cache.initialize();
+  });
